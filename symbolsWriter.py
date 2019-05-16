@@ -1,19 +1,32 @@
+import random
 import turtle
+r = 0
 print('"?" to help\n')
 t = turtle.Pen()
 while True:
     a = str(input())
     if a == "?":
         print('Enter a number to start')
+        print('Enter "colorsOn" to make numbers colorful')
+        print('Enter "colorsOff" to make numbers black')
         print('"><" to stop\n')
     if a == "><":
         break
+    if a == "colorsOn":
+        r = 1
+    if a == "colorsOff":
+        r = 0
     b = len(a)
     id = 0
     t.reset()
     while id != b:
         j = a[id]
+        x = random.random()
+        y = random.random()
+        z = random.random()
         if j == "1":
+            if r == 1:
+                t.color(x,y,z)
             t.right(90)
             t.forward(14)
             t.left(90)
@@ -24,6 +37,8 @@ while True:
             t.up()
             t.forward(7)
         elif j == "2":
+            if r == 1:
+                t.color(x,y,z)
             t.down()
             t.forward(7)
             t.right(90)
@@ -40,6 +55,8 @@ while True:
             t.right(90)
             t.forward(7)
         elif j == "3":
+            if r == 1:
+                t.color(x,y,z)
             t.down()
             t.forward(7)
             t.right(90)
@@ -58,6 +75,8 @@ while True:
             t.right(90)
             t.forward(7)
         elif j == "4":
+            if r == 1:
+                t.color(x,y,z)
             t.down()
             t.right(90)
             t.forward(7)
@@ -71,6 +90,8 @@ while True:
             t.right(90)
             t.forward(7)
         elif j == "5":
+            if r == 1:
+                t.color(x,y,z)
             t.right(90)
             t.forward(14)
             t.left(90)
@@ -87,6 +108,8 @@ while True:
             t.up()
             t.forward(7)
         elif j == "6":
+            if r == 1:
+                t.color(x,y,z)
             t.right(90)
             t.forward(7)
             t.down()
@@ -104,6 +127,8 @@ while True:
             t.up()
             t.forward(7)
         elif j == "7":
+            if r == 1:
+                t.color(x,y,z)
             t.down()
             t.forward(7)
             t.right(90)
@@ -113,6 +138,8 @@ while True:
             t.left(90)
             t.forward(7)
         elif j == "8":
+            if r == 1:
+                t.color(x,y,z)
             t.right(90)
             t.forward(7)
             t.down()
@@ -134,6 +161,8 @@ while True:
             t.left(90)
             t.forward(7)
         elif j == "9":
+            if r == 1:
+                t.color(x,y,z)
             t.up()
             t.right(90)
             t.forward(14)
@@ -155,6 +184,8 @@ while True:
             t.left(90)
             t.forward(7)
         elif j == "0":
+            if r == 1:
+                t.color(x,y,z)
             t.down()
             t.right(90)
             t.forward(14)
