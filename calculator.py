@@ -14,7 +14,8 @@ while True:
         print('    8) Enter "sqrt" to get a square root')
         print('    9) Enter "stop" to stop')
         print('2. Enter "credits" to see credits')
-        print('3. Enter "exit" to exit \n')
+        print('3. Enter "exit" to exit ')
+        print("---------------------------------------------\n")
         continue
     elif first == "credits":
         print("\n" + 21 * " " + "╔══╦╗──╔╦══╦═══╦══╦╗─╔╦═══╗")
@@ -29,15 +30,17 @@ while True:
         print(21 * " " + "║║─║╔╗║║─║║─║║║║║─║╔╗║─║║─║║║║╔╗╔╝")
         print(21 * " " + "║╚═╣║║║╚═╣╚═╣╚╝║╚═╣║║║─║║─║╚╝║║║║")
         print(21 * " " + "╚══╩╝╚╩══╩══╩══╩══╩╝╚╝─╚╝─╚══╩╝╚╝ \n")
-        print(25*" " + "by Capodastro Corp., 2019 \n")
+        print(25*" " + "by Capodastro Corp., 2019")
+        print(21*" " + "---------------------------------\n")
         continue
     elif first == "exit":
         print("\nHave a nice day!")
         break
     elif first == "start":
         while True:
-            a = input(" \nEnter first number \n")
+            a = input("\nEnter first number\n")
             if a == "stop":
+                print("--------------------")
                 print("\n\n***Amazing Calculator***\n")
                 print('\n"?" to help\n')
                 break
@@ -49,10 +52,12 @@ while True:
             if A == True:
                 a = float(a)
             else:
-                print(" \nIncorrect answer!\n")
+                print(" \nIncorrect answer!")
+                print("--------------------\n")
                 continue
             c = input("\nChoose math operation \n")
             if c == "stop":
+                print("--------------------")
                 print("\n\n***Amazing Calculator***\n")
                 print('\n"?" to help\n')
                 break
@@ -64,13 +69,16 @@ while True:
             if C != True and (c == "+" or c == "-" or c == "*" or c == "/" or c == "//" or c == "%" or c == "pow" or c == "sqrt"):
                 c = str(c)
             else:
-                print("\nIncorrect answer!\n")
+                print("\nIncorrect answer!")
+                print("--------------------\n")
                 continue
             if c == "sqrt":
-                print("\nResult: %s\n" % pow(a, .5))
+                print("\nResult: %s" % pow(a, .5))
+                print("--------------------\n")
                 continue
             b = input("\nEnter second number \n")
             if b == "stop":
+                print("--------------------")
                 print("\n\n***Amazing Calculator***\n")
                 print('\n"?" to help\n')
                 break
@@ -82,32 +90,42 @@ while True:
             if B == True:
                 b = float(b)
             else:
-                print("\nIncorrect answer!\n")
+                print("\nIncorrect answer!")
+                print("--------------------\n")
                 continue
             if b == 0 and (c == "/" or c == "//" or c == "%"):
-                print("\nError! Division by zero!\n")
+                print("\nError! Division by zero!")
+                print("--------------------\n")
                 continue
             if c == "+":
-                print("\nResult: %s\n" % str(a+b))
+                print("\nResult: %s" % str(a+b))
+                print("--------------------\n")
                 continue
             elif c == "-":
-                print("\nResult: %s\n" % str(a-b))
+                print("\nResult: %s" % str(a-b))
+                print("--------------------\n")
                 continue
             elif c == "*":
-                print("\nResult: %s\n" % str(a*b))
+                print("\nResult: %s" % str(a*b))
+                print("--------------------\n")
                 continue
             elif c == "/":
-                print("\nResult: %s\n" % str(a/b))
+                print("\nResult: %s" % str(a/b))
+                print("--------------------\n")
                 continue
             elif c == "//":
-                print("\nResult: %s\n" % str(a//b))
+                print("\nResult: %s" % str(a//b))
+                print("--------------------\n")
                 continue
             elif c == "%":
-                print("\nResult: %s\n" % str(a%b))
+                print("\nResult: %s" % str(a%b))
+                print("--------------------\n")
                 continue
             elif c == "pow":
-                print("\nResult: %s\n" % str(a**b))
+                print("\nResult: %s" % str(a**b))
+                print("--------------------\n")
                 continue
     else:
-        print("\nIncorrent answer! \n")
+        print("\nIncorrent answer!")
+        print("--------------------\n")
         continue
