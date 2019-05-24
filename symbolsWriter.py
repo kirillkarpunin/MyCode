@@ -24,11 +24,11 @@ while True:
     pen.reset()
     while id != length:
         symbol = inputValue[id]
-        x = random.random()
-        y = random.random()
-        z = random.random()
         if color_key == 1:
-                pen.color(x,y,z)
+            x = random.random()
+            y = random.random()
+            z = random.random()
+            pen.color(x,y,z)
         if symbol == "1":
             pen.right(90)
             pen.forward(14)
