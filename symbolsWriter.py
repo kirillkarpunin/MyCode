@@ -4,26 +4,26 @@ color_key = 0
 print('"?" to help\n')
 pen = turtle.Pen()
 while True:
-    inputValue = str(input())
-    inputValue = inputValue.lower()
-    if inputValue == "?":
+    input_value = str(input())
+    input_value = input_value.lower()
+    if input_value == "?":
         print('Enter a number to start')
         print('Enter "colors_on" to make numbers colorful')
         print('Enter "colors_off" to make numbers black')
         print('"><" to stop\n')
-    if inputValue == "><":
+    if input_value == "><":
         break
-    if inputValue == "colors_on":
+    if input_value == "colors_on":
         color_key = 1
         continue
-    if inputValue == "colors_off":
+    if input_value == "colors_off":
         color_key = 0
         continue
-    length = len(inputValue)
+    length = len(input_value)
     id = 0
     pen.reset()
     while id != length:
-        symbol = inputValue[id]
+        symbol = input_value[id]
         if color_key == 1:
             x = random.random()
             y = random.random()
