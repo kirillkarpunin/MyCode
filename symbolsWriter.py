@@ -1,6 +1,6 @@
 import random
 import turtle
-randomValue = 0
+color_key = 0
 print('"?" to help\n')
 pen = turtle.Pen()
 while True:
@@ -14,10 +14,10 @@ while True:
     if inputValue == "><":
         break
     if inputValue == "colors_on":
-        randomValue = 1
+        color_key = 1
         continue
     if inputValue == "colors_off":
-        randomValue = 0
+        color_key = 0
         continue
     length = len(inputValue)
     id = 0
@@ -27,9 +27,9 @@ while True:
         x = random.random()
         y = random.random()
         z = random.random()
-        if symbol == "1":
-            if randomValue == 1:
+        if color_key == 1:
                 pen.color(x,y,z)
+        if symbol == "1":
             pen.right(90)
             pen.forward(14)
             pen.left(90)
@@ -40,8 +40,6 @@ while True:
             pen.up()
             pen.forward(7)
         elif symbol == "2":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.down()
             pen.forward(7)
             pen.right(90)
@@ -58,8 +56,6 @@ while True:
             pen.right(90)
             pen.forward(7)
         elif symbol == "3":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.down()
             pen.forward(7)
             pen.right(90)
@@ -78,8 +74,6 @@ while True:
             pen.right(90)
             pen.forward(7)
         elif symbol == "4":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.down()
             pen.right(90)
             pen.forward(7)
@@ -93,8 +87,6 @@ while True:
             pen.right(90)
             pen.forward(7)
         elif symbol == "5":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.right(90)
             pen.forward(14)
             pen.left(90)
@@ -111,8 +103,6 @@ while True:
             pen.up()
             pen.forward(7)
         elif symbol == "6":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.right(90)
             pen.forward(7)
             pen.down()
@@ -130,8 +120,6 @@ while True:
             pen.up()
             pen.forward(7)
         elif symbol == "7":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.down()
             pen.forward(7)
             pen.right(90)
@@ -141,8 +129,6 @@ while True:
             pen.left(90)
             pen.forward(7)
         elif symbol == "8":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.right(90)
             pen.forward(7)
             pen.down()
@@ -164,8 +150,6 @@ while True:
             pen.left(90)
             pen.forward(7)
         elif symbol == "9":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.up()
             pen.right(90)
             pen.forward(14)
@@ -187,8 +171,6 @@ while True:
             pen.left(90)
             pen.forward(7)
         elif symbol == "0":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.down()
             pen.right(90)
             pen.forward(14)
@@ -205,8 +187,6 @@ while True:
             pen.up()
             pen.forward(14)
         elif symbol == "a":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.down()
             pen.forward(7)
             pen.right(90)
@@ -226,8 +206,6 @@ while True:
             pen.right(90)
             pen.forward(7)
         elif symbol == "b":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.down()
             pen.right(90)
             pen.forward(14)
@@ -246,8 +224,6 @@ while True:
             pen.backward(14)
             pen.right(180)
         elif symbol == "c":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.right(90)
             pen.forward(14)
             pen.left(90)
@@ -261,8 +237,6 @@ while True:
             pen.up()
             pen.forward(7)
         elif symbol == "d":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.down()
             pen.right(90)
             pen.forward(14)
@@ -284,8 +258,6 @@ while True:
             pen.backward(14)
             pen.left(180)
         elif symbol == "e":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.up()
             pen.right(90)
             pen.forward(14)
@@ -305,8 +277,6 @@ while True:
             pen.up()
             pen.forward(7)
         elif symbol == "f":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.down()
             pen.right(90)
             pen.forward(14)
@@ -321,8 +291,6 @@ while True:
             pen.up()
             pen.forward(7)
         elif symbol == "g":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.down()
             pen.forward(5)
             pen.backward(5)
@@ -341,8 +309,6 @@ while True:
             pen.right(90)
             pen.forward(7)
         elif symbol == "h":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.down()
             pen.right(90)
             pen.forward(14)
@@ -356,8 +322,6 @@ while True:
             pen.left(90)
             pen.forward(7)
         elif symbol == "i":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.down()
             pen.right(90)
             pen.forward(2)
@@ -371,8 +335,6 @@ while True:
             pen.right(90)
             pen.forward(7)
         elif symbol == "j":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.up()
             pen.right(90)
             pen.forward(12)
@@ -392,8 +354,6 @@ while True:
             pen.right(180)
             pen.forward(6)
         elif symbol == "k":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.down()
             pen.right(90)
             pen.forward(14)
@@ -416,8 +376,6 @@ while True:
             pen.right(90)
             pen.forward(7)
         elif symbol == "l":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.down()
             pen.right(90)
             pen.forward(14)
@@ -430,8 +388,6 @@ while True:
             pen.right(90)
             pen.forward(7)
         elif symbol == "m":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.down()
             pen.right(90)
             pen.forward(14)
@@ -450,8 +406,6 @@ while True:
             pen.up()
             pen.forward(7)
         elif symbol == "n":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.down()
             pen.right(90)
             pen.forward(14)
@@ -486,8 +440,6 @@ while True:
             pen.left(90)
             pen.forward(7)
         elif symbol == "o":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.up()
             pen.right(90)
             pen.forward(2)
@@ -506,8 +458,6 @@ while True:
             pen.right(90)
             pen.forward(7)
         elif symbol == "p":
-            if randomValue == 1:
-                pen.color(x,y,z)
             pen.down()
             pen.right(90)
             pen.forward(14)
