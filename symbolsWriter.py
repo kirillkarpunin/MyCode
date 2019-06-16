@@ -11,6 +11,7 @@ while True:
         print('Enter "colors_on" to make numbers colorful')
         print('Enter "colors_off" to make numbers black')
         print('"><" to stop\n')
+        continue
     if input_value == "><":
         break
     if input_value == "colors_on":
