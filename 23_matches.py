@@ -23,15 +23,18 @@ while True:
         print("Choose an opponent:")
         print("    1)Computer")
         print("    2)Another player")
+        print("Enter \"back\" to return to previous menu")
         matches = 23
         playerAnalyzer = 1
         takenMatches = 0
+        difficultyMenu = "none"
         while True:
             playMenu = str(input())
             if playMenu == "1":
                 print("\n\nChoose a difficulty")
                 print("    1)Easy")
                 print("    2)Hard")
+                print("Enter \"back\" to return to previous menu")
                 while True:
                     difficultyMenu = str(input())
                     if difficultyMenu == "1":
@@ -125,10 +128,17 @@ while True:
                         print("\n\n\n\n------------\n 23 matches\n------------\n")
                         print("Enter \"?\" to get a help\n")
                         break
+                    elif difficultyMenu.lower() == "back":
+                        print("\n\n Choose an opponent:")
+                        print("    1)Computer")
+                        print("    2)Another player")
+                        print("Enter \"back\" to return to previous menu")
+                        break
                     else:
-                        print("Incorrect answer")
+                        print("Incorrect answer\n\n")
                         continue
-                break
+                if difficultyMenu.lower() != "back":
+                    break
             elif playMenu == "2":
                 firstPlayer = str(input("\n\nEnter a name of first player\n"))
                 secondPlayer = str(input("\n\nEnter a name of second player\n"))
@@ -161,6 +171,10 @@ while True:
                 else:
                     print("\n%s has won" %secondPlayer)
                 print("-------------------------------------")
+                print("\n\n\n\n------------\n 23 matches\n------------\n")
+                print("Enter \"?\" to get a help\n")
+                break
+            elif playMenu.lower() == "back":
                 print("\n\n\n\n------------\n 23 matches\n------------\n")
                 print("Enter \"?\" to get a help\n")
                 break
