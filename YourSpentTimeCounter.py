@@ -10,16 +10,24 @@ while True:
             os.mkdir(r"D:/YSTCounter")
             file = open(r"D:/YSTCounter/YSTCounter_data.txt", "a")
             print("Your list was created in D:/YSTCounter\n\n")
-    elif menu == "delete":
+    elif menu == "delete":            
         try:
             os.remove(r"D:/YSTCounter/YSTCounter_data.txt")
             os.rmdir(r"D:/YSTCounter")
-        except PermissionError:
-            print("You must close a data file or data folder\n\n")
-            continue
         except FileNotFoundError:
+            try:
+                os.rmdir(r"D:/YSTCounter")
+            except FileNotFoundError:
+                print("File not founded\n\n")
+                continue
+            else:
+                print("Your list was successfully deleted\n\n")
+                continue
             print("File not founded\n\n")
             continue
+        except PermissionError:
+                print("You must close a data file or data folder\nAlso, you can't delete an empty file\n\n")
+                continue
         print("Your list was successfully deleted\n\n")
     elif menu == "exit":
         break
@@ -53,6 +61,7 @@ while True:
         if os.path.getsize(r"D:/YSTCounter/YSTCounter_data.txt") == 0:
             print("It is empty now\n\n")
             continue
+        print("")
         for line in file:
             print(line)
         file.close()
