@@ -33,24 +33,23 @@ while True:
         break
     elif menu == "edit":
         date = input("\n\nWhat date is it today?\n")
-        print("What time (in hours) do you spent for...")
-        series = input("...for series or any else videos?\n")
-        books = input("...for books?\n")
-        games = input("...for games?\n")
-        cleaning = input("...for home cleaning?\n")
-        walk = input("...for a walk?\n")
-        sleep = input("...for a sleep?\n")
-        print("Your list was successfully edited\n\n")
         file = open(r"D:/YSTCounter/YSTCounter_data.txt", "a")
         file.write("Date: %s\n\n" %date)
-        file.write("Series: %s hours\n" %series)
-        file.write("Books: %s hours\n" %books)
-        file.write("Games: %s hours\n" %games)
-        file.write("Home cleaning: %s hours\n" %cleaning)
-        file.write("Walk: %s hours\n" %walk)
-        file.write("Sleep: %s hours\n" %sleep)
-        file.write("-----------------------\n\n")
-        file.close()
+        while True:
+            activity = input("\nEnter your activity\nYou can enter 'stop' here to stop entering\n")
+            if activity == "stop":
+                file.write("-----------------------\n\n")
+                file.close()
+                break
+            time = input("\nHow much time in hours you spent for this activity\n")
+            try:
+                float(time)
+            except ValueError:
+                print("It is not a number\n")
+                continue
+            file.write("%s: %s hours\n" %(activity, time))
+            print("")
+        print("Your list was successfully edited\n\n")
         continue
     elif menu == "read":
         try:
