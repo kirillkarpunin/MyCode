@@ -2,6 +2,7 @@ import os
 while True:
     print("You can create, edit, read or delete your list")
     menu = input("Also, you can exit\nWhat do you want to do?\n")
+    menu = menu.lower()
     if menu == "create":
         dirChecker = os.path.exists(r"D:/YSTCounter")
         if dirChecker:
@@ -32,13 +33,17 @@ while True:
     elif menu == "exit":
         break
     elif menu == "edit":
+        dirChecker = os.path.exists(r"D:/YSTCounter")
+        if not dirChecker:
+            print("File not founded\n\n")
+            continue
         date = input("\n\nWhat date is it today?\n")
         file = open(r"D:/YSTCounter/YSTCounter_data.txt", "a")
+        file.write("-----------------------\n")
         file.write("Date: %s\n\n" %date)
         while True:
             activity = input("\nEnter your activity\nYou can enter 'stop' here to stop entering\n")
-            if activity == "stop":
-                file.write("-----------------------\n\n")
+            if activity.lower() == "stop":
                 file.close()
                 break
             time = input("\nHow much time in hours you spent for this activity\n")
@@ -64,6 +69,7 @@ while True:
         for line in file:
             print(line)
         file.close()
+        print("-----------------------\n\n")
         continue
     else:
         print("Incorrect answer\n\n")
