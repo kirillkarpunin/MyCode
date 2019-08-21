@@ -1,0 +1,1 @@
+If you want to have nice icon in upper left corner you need to create a file path (C:/PasswordGeneratorIcon), and put attached file there
