@@ -154,5 +154,7 @@ if os.path.getsize(r"D:/PG/data.txt") != 0:
     resetButton.grid()
     deleteButton.grid()
 
-window.iconbitmap(r"C:/PasswordGeneratorIcon/64.ico")
+iconChecker = os.path.exists(r"C:/PasswordGeneratorIcon/64.ico")
+if iconChecker: 
+	window.iconbitmap(r"C:/PasswordGeneratorIcon/64.ico")
 window.mainloop()
