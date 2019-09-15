@@ -150,7 +150,7 @@ def unchecker():
 def checker():
 	global iterate, BALL_X_SPEED, BALL_Y_SPEED
 	if iterate == 1:
-		C.create_text(WIDTH/6, HEIGHT-30, text = "W, S - 1st player\nPage Up, Page Down - 2nd player\nESC - quit\nYou need to score 7 points to win", font = "Arial 10", fill = "white", tag = "rules")
+		C.create_text(WIDTH/5, HEIGHT-40, text = "W, S - 1st player\nPage Up, Page Down - 2nd player\nESC - quit\nYou need to score 7 points to win\nYou can't play on Russian keyboard keymap!", font = "Arial 10", fill = "white", tag = "rules")
 		BALL_X_SPEED = 0
 		BALL_Y_SPEED = 0
 		iterate = 2
@@ -175,9 +175,9 @@ def main():
 
 def move_pad(event):
 	global LEFT_PAD_SPEED, RIGHT_PAD_SPEED
-	if event.keysym == "w":
+	if event.keysym == "w" or event.keysym == "W":
 		LEFT_PAD_SPEED = -PAD_SPEED
-	elif event.keysym == "s":
+	elif event.keysym == "s" or event.keysym == "S":
 		LEFT_PAD_SPEED = PAD_SPEED
 	elif event.keysym == "Up":
 		RIGHT_PAD_SPEED = -PAD_SPEED
@@ -188,7 +188,7 @@ def move_pad(event):
 
 def stop_pad(event):
 	global LEFT_PAD_SPEED, RIGHT_PAD_SPEED
-	if event.keysym in "ws":
+	if event.keysym in ("w", "s", "W", "S"):
 		LEFT_PAD_SPEED = 0
 	elif event.keysym in ("Up", "Down"):
 		RIGHT_PAD_SPEED = 0
