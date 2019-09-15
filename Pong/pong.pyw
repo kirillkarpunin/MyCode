@@ -24,7 +24,7 @@ while True:
 # BALL_Y_SPEED = 0
 
 BALL_SPEED_UP = 1.05
-BALL_MAX_SPEED = 25
+BALL_MAX_SPEED = 30
 
 BALL_START_SPEED = 7
 
@@ -63,6 +63,7 @@ def bounce(action):
 		BALL_Y_SPEED = random.randrange(-10, 10)
 		if abs(BALL_X_SPEED) < BALL_MAX_SPEED:
 			BALL_X_SPEED *= -BALL_SPEED_UP
+			print(BALL_X_SPEED)
 		else:
 			BALL_X_SPEED = -BALL_X_SPEED
 	else:
