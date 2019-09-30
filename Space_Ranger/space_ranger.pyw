@@ -93,9 +93,8 @@ def stars():
 		c.move(STAR, 0, STAR_SPEED)
 
 def bg_astroid():
-	global ASTEROID_X, score
+	global ASTEROID_X
 	if c.coords(ASTEROID)[1] > HEIGHT:
-		score += 1
 		ASTEROID_X = random.randint(-20, 240)
 		c.coords(ASTEROID, ASTEROID_X, - 80, ASTEROID_X + 80, 0)
 	else:
@@ -106,8 +105,9 @@ def bg_astroid():
 		c.move(ASTEROID, 0, ASTEROID_SPEED)
 
 def obstacle():
-	global OBSTACLE_X, OBSTACLE_SPEED
+	global OBSTACLE_X, OBSTACLE_SPEED, score
 	if c.coords(OBSTACLE)[1] > HEIGHT:
+		score += 1
 		if OBSTACLE_SPEED * OBSTACLE_SPEED_UP > MAX_SPEED:
 			pass
 		else:
