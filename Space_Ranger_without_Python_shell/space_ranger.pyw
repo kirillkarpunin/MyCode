@@ -175,5 +175,4 @@ c.focus_set()
 
 main()
 
-root.iconbitmap(r"icon.ico")
 root.mainloop()
