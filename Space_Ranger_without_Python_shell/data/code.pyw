@@ -129,7 +129,7 @@ def obstacle():
 def try_defeat():
 	global defeat
 	if (c.coords(OBSTACLE)[1] <= c.coords(SHIP)[3] <= c.coords(OBSTACLE)[3] and c.coords(OBSTACLE)[0] <= c.coords(SHIP)[2] <= c.coords(OBSTACLE)[2]) or (c.coords(ASTEROID)[1] <= c.coords(SHIP)[3] <= c.coords(ASTEROID)[3] and c.coords(ASTEROID)[0] <= c.coords(SHIP)[2] <= c.coords(ASTEROID)[2]):
-		c.create_text(WIDTH/2, HEIGHT/7, text = "You crashed\nPress 'Space' to restart", fill = "white", tag = "loser")
+		c.create_text(WIDTH/2, HEIGHT/7, text = "You have crashed\nPress 'Space' to restart\nPress 'Esc' to close the game", fill = "white", tag = "loser")
 		defeat = True
 
 def restart():
