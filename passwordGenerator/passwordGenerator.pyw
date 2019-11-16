@@ -8,10 +8,9 @@ from tkinter import scrolledtext
 password = []
 nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-dirChecker = os.path.exists(r"D:/PG")
+dirChecker = os.path.exists(r"data.txt")
 if not dirChecker:
-    os.mkdir(r"D:/PG")
-    file = open(r"D:/PG/data.txt", "a")
+    file = open(r"data.txt", "a")
     file.close()
     dirChecker = True
 
@@ -40,10 +39,8 @@ def generating():
 def reset():
     message = messagebox.askyesno("Reset the list", "Are you sure?")
     if message:
-        os.remove(r"D:/PG/data.txt")
-        os.rmdir(r"D:/PG")
-        os.mkdir(r"D:/PG")
-        file = open(r"D:/PG/data.txt", "a")
+        os.remove(r"data.txt")
+        file = open(r"data.txt", "a")
         file.close()
         passwordsList.configure(state = "normal")
         passwordsList.delete(1.0, END)
@@ -54,8 +51,7 @@ def reset():
 def delete():
     message = messagebox.askyesno("Delete the list", "Are you sure?")
     if message:
-        os.remove(r"D:/PG/data.txt")
-        os.rmdir(r"D:/PG")
+        os.remove(r"data.txt")
         passwordsList.configure(state = "normal")
         passwordsList.delete(1.0, END)
         passwordsList.insert(INSERT, "List is deleted.\nRestart this program if you want\nto create a list")
@@ -64,13 +60,11 @@ def delete():
         deleteButton.grid_remove()
 
 def save():
-    if dirChecker == False:
-        os.mkdir(r"D:/PG")
     if savePassword.get() != "" and passwordDestination.get() != "":
-        file = open(r"D:/PG/data.txt", "a")
+        file = open(r"data.txt", "a")
         file.write(savePassword.get() + " | " + passwordDestination.get() + "\n")
         file.close()
-        file = open(r"D:/PG/data.txt", "r")
+        file = open(r"data.txt", "r")
         passwordsList.configure(state = "normal")
         passwordsList.delete(1.0, END)
         for line in file:
@@ -144,8 +138,8 @@ deleteButton = Button(saverTab, text = "Delete the list", font = "Times", fg = "
 deleteButton.grid(row = 8, sticky = "W")
 deleteButton.grid_remove()
 
-if os.path.getsize(r"D:/PG/data.txt") != 0:
-    file = open(r"D:/PG/data.txt", "r")
+if os.path.getsize(r"data.txt") != 0:
+    file = open(r"data.txt", "r")
     passwordsList.configure(state = "normal")
     for line in file:
         passwordsList.insert(INSERT, line)
