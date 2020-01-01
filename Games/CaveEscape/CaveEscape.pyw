@@ -131,7 +131,8 @@ def fall():
 			FALL = True
 
 def game_over():
-	global PLAYER_SPEED, SCORE
+	global PLAYER_SPEED, SCORE, PRESCORE
+	PRESCORE = 0
 	SCORE = 0
 	c.itemconfig(score, text = "Score: %s" %SCORE )	
 	PLAYER_SPEED = 0
