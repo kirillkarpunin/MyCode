@@ -14,7 +14,10 @@ PLAYER_SPEED = 5
 
 SCORE = 0
 PRESCORE = 0
-secret = 1
+
+konami_code = 1
+iddqd = 1
+GOD_MODE = False
 
 positions = []
 
@@ -80,7 +83,7 @@ def main():
 	if OUTRO:
 		outro_func()
 	if FALL:
-		game_over()
+			game_over()
 	fall()
 	win()
 	logs_movement()
@@ -127,7 +130,8 @@ def fall():
 		elif c.coords(LOG_1)[1] <= PLAYER_CENTER_Y <= c.coords(LOG_1)[3] and c.coords(LOG_1)[0] <= PLAYER_CENTER_X <= c.coords(LOG_1)[2] or c.coords(LOG_2)[1] <= PLAYER_CENTER_Y <= c.coords(LOG_2)[3] and c.coords(LOG_2)[0] <= PLAYER_CENTER_X <= c.coords(LOG_2)[2] or c.coords(LOG_3)[1] <= PLAYER_CENTER_Y <= c.coords(LOG_3)[3] and c.coords(LOG_3)[0] <= PLAYER_CENTER_X <= c.coords(LOG_3)[2]:
 			pass
 		else:
-			FALL = True
+			if not GOD_MODE:
+				FALL = True
 
 def game_over():
 	global PLAYER_SPEED, SCORE, PRESCORE
@@ -237,44 +241,68 @@ def logs_respawn():
 
 
 def player_move(event):
-	global PLAYER_SPEED_VERT, PLAYER_SPEED_HOR, secret, SCORE, PRESCORE
+	global PLAYER_SPEED_VERT, PLAYER_SPEED_HOR, konami_code, iddqd, SCORE, PRESCORE, GOD_MODE
 	if event.keysym == "Left":
 		PLAYER_SPEED_HOR = -PLAYER_SPEED
-		if secret == 5 or secret == 7:
-			secret += 1
+		if konami_code == 5 or konami_code == 7:
+			konami_code += 1
 		else:
-			secret = 1
+			konami_code = 1
 	if event.keysym == "Right":
 		PLAYER_SPEED_HOR = PLAYER_SPEED
-		if secret == 6 or secret == 8:
-			secret += 1
+		if konami_code == 6 or konami_code == 8:
+			konami_code += 1
 		else:
-			secret = 1
+			konami_code = 1
 	if event.keysym == "Up":
 		PLAYER_SPEED_VERT = -PLAYER_SPEED
-		if secret == 1 or secret == 2:
-			secret += 1
+		if konami_code == 1 or konami_code == 2:
+			konami_code += 1
 		else:
-			secret = 1
+			konami_code = 1
 	if event.keysym == "Down":
 		PLAYER_SPEED_VERT = PLAYER_SPEED
-		if secret == 3 or secret == 4:
-			secret += 1
+		if konami_code == 3 or konami_code == 4:
+			konami_code += 1
 		else:
-			secret = 1
+			konami_code = 1
 	if event.keysym == "b" or event.keysym == "B":
-		if secret == 9:
-			secret += 1
+		if konami_code == 9:
+			konami_code += 1
 		else:
-			secret = 1
+			konami_code = 1
 	if event.keysym == "a" or event.keysym == "A":
-		if secret == 10:
+		if konami_code == 10:
 			SCORE += 1000
 			PRESCORE += 7000
 			c.itemconfig(score, text = "Score: %s" %SCORE )	
-			secret = 1
+			print("Konami-code entered!")
+			konami_code = 1
 		else:
-			secret = 1
+			konami_code = 1
+	if event.keysym == "i" or event.keysym == "I":
+		if iddqd == 1:
+			iddqd += 1
+		else:
+			iddqd = 1
+	if event.keysym == "d" or event.keysym == "D":
+		if iddqd == 2 or iddqd == 3:
+			iddqd += 1
+		elif iddqd == 5:
+			if not GOD_MODE:
+				GOD_MODE = True
+				print("God mode enabled!")
+			elif GOD_MODE:
+				GOD_MODE = False
+				print("God mode disabled!")
+			iddqd = 1
+		else:
+			iddqd = 1
+	if event.keysym == "q" or event.keysym == "Q":
+		if iddqd == 4:
+			iddqd += 1
+		else:
+			iddqd = 1
 	if event.keysym == "Escape":
 		root.destroy()
 
