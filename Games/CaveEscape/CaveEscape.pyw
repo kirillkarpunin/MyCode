@@ -112,7 +112,6 @@ def win():
 	if 0 < PLAYER_CENTER_Y < 55:
 		PRESCORE +=1
 		SCORE = PRESCORE / 7
-		print(PRESCORE, SCORE)
 		SCORE = int(SCORE)
 		c.itemconfig(score, text = "Score: %s" %SCORE )	
 		intro_func()
@@ -238,7 +237,7 @@ def logs_respawn():
 
 
 def player_move(event):
-	global PLAYER_SPEED_VERT, PLAYER_SPEED_HOR, secret, SCORE
+	global PLAYER_SPEED_VERT, PLAYER_SPEED_HOR, secret, SCORE, PRESCORE
 	if event.keysym == "Left":
 		PLAYER_SPEED_HOR = -PLAYER_SPEED
 		if secret == 5 or secret == 7:
@@ -271,6 +270,7 @@ def player_move(event):
 	if event.keysym == "a" or event.keysym == "A":
 		if secret == 10:
 			SCORE += 1000
+			PRESCORE += 7000
 			c.itemconfig(score, text = "Score: %s" %SCORE )	
 			secret = 1
 		else:
