@@ -15,8 +15,11 @@ root.update()
 def main():
 	pass
 	# put function calls here
+	root.after(60, main)
 
 # put functions here
+
+c.focus_set()
 
 main()
 
