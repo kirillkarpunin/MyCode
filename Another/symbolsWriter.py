@@ -7,7 +7,7 @@ while True:
     input_value = str(input())
     input_value = input_value.lower()
     if input_value == "?":
-        print('Enter a number to start')
+        print('Enter something to start')
         print('Enter "colors_on" to make numbers colorful')
         print('Enter "colors_off" to make numbers black')
         print('"><" to stop\n')

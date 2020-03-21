@@ -17,7 +17,7 @@ while True:
         print("-------------------------------------------------------")
         print(" - There are 23 matches")
         print(" - In your turn you can take one, two or three matches")
-        print(" - If you take last match you will lose")
+        print(" - If you take last match you lose")
         print("-------------------------------------------------------\n\n")
     elif menuInput == "play":
         print("Choose an opponent:")
