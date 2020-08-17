@@ -2,6 +2,7 @@ from tkinter import *
 
 root = Tk()
 root.title("~")
+root.resizable(width = False, height = False)
 
 # put variables here
 
